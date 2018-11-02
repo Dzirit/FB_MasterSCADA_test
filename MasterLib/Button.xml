@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> <!--xml будет содержать список всех входов/выходов ВФБ -->
+<FBConfig>
+  <Map>
+    <Items>
+      <Pin ID="1" Name="Состояние" Type="Логический" />
+      <Pin ID="2" Name="Блок" Type="Логический" />
+      <Pout ID="3" Name="Выход" Type="Логический" />
+    </Items>
+  </Map>
+  <VisuaMap>
+    <Items>
+      <Pout ID="1" Name="Состояние в контрол" Type="Логический" />
+      <Pout ID="2" Name="Блок в контрол" Type="Логический" />
+      <Pin ID="3" Name="Выход из контрола" Type="Логический" />
+    </Items>
+  </VisuaMap>
+</FBConfig>

@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>cbd3857c-42e6-4fce-ade8-06e074a85610</ProjectGuid>
+    <ProjectGuid>{CBD3857C-42E6-4FCE-ADE8-06E074A85610}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MasterLib</RootNamespace>
@@ -16,10 +16,11 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\..\..\..\..\..\Program Files %28x86%29\InSAT\MasterSCADA\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <RegisterForComInterop>true</RegisterForComInterop>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -30,24 +31,78 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="FB">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\InSAT\MasterSCADA\FB.dll</HintPath>
+    </Reference>
+    <Reference Include="FBLibrary, Version=3.9.0.2484, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\InSAT\MasterSCADA\FBLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="InSAT.Library">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\InSAT\MasterSCADA\InSAT.Library.dll</HintPath>
+    </Reference>
+    <Reference Include="Insat.Opc">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\InSAT\MasterSCADA\Insat.Opc.dll</HintPath>
+    </Reference>
+    <Reference Include="InternalModules">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\InSAT\MasterSCADA\InternalModules.dll</HintPath>
+    </Reference>
+    <Reference Include="MasterSCADA.Common">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\InSAT\MasterSCADA\MasterSCADA.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="MasterSCADALib">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\InSAT\MasterSCADA\MasterSCADALib.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Button.cs" />
+    <Compile Include="buttonControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="buttonControl.Designer.cs">
+      <DependentUpon>buttonControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Button.bmp" />
+    <EmbeddedResource Include="Button.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="buttonControl.resx">
+      <DependentUpon>buttonControl.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VISUALFBLib">
+      <Guid>{6ADB1DD2-9C6D-4B48-8526-C32D34EF9D95}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
- </Project>
+</Project>
